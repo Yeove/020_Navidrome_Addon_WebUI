@@ -1,5 +1,3 @@
-# music.yeove.com | Navidrome Custom Frontend
-
 https://github.com/user-attachments/assets/d81f4ec9-cfd5-476b-9c85-39c952e08200
 
 A light music player for your [Navidrome](https://www.navidrome.org) server, in a single HTML file.

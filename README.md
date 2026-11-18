@@ -1,14 +1,14 @@
 # Navidrome Custom Frontend
 
-A light music player for your [Navidrome](https://www.navidrome.org) server, for desktop, phones, & tablets.
+A lightweight WebUI music player for your [Navidrome](https://www.navidrome.org) server, for desktop, phones, & tablets.
 
 https://github.com/user-attachments/assets/d81f4ec9-cfd5-476b-9c85-39c952e08200
 
 | File | What it is |
 | --- | --- |
-| `music.yeove.com/index.html` | The whole player. Its settings are at the top of the file. |
+| `music.yeove.com/index.html` | The whole player |
 | `music.yeove.com/tagd.py` | Optional: a small helper that writes moods into your music files |
-| `compose.yaml` | A ready-made Docker setup: Navidrome, the player and the mood helper |
+| `compose.yaml` | An example Docker setup |
 
 ## Features
 
@@ -51,8 +51,8 @@ Open `music.yeove.com/index.html` in a text editor. The settings are at the top:
 | Setting | What it does |
 | --- | --- |
 | `moodEditing` | `true` allows mood editing. **Edit Moods…** only shows up when `tagd.py` is running (Option 2). `false` turns it off |
-| `musicFolder` | Navidrome's music folder (its `ND_MUSICFOLDER`), used for the paths in exported playlists. Already right for Option 2. With your own Navidrome, it's `/music` unless you changed it |
-| `navidromeLink` | Address of Navidrome's own interface, for the Open Navidrome button in Settings. When empty, it hides the button |
+| `musicFolder` | Navidrome's music folder (its `ND_MUSICFOLDER`), used for the paths in exported playlists. This setting is already correct if you set this up using Option 2. With your own Navidrome, it's `/music` unless you changed it |
+| `navidromeLink` | Address of Navidrome's own interface, for the Open Navidrome button in Settings. When this field is empty, it will automatically hide this button from the user interface. |
 | `title` | Browser tab title. When empty, it uses the page's address |
 
 Save, then refresh the page.

@@ -1,7 +1,6 @@
 # Navidrome Custom Frontend
 
-A light music player for your [Navidrome](https://www.navidrome.org) server, in a single HTML file.
-<br>Works on desktop, phones, & tablets.
+A light music player for your [Navidrome](https://www.navidrome.org) server, in a single .html file, for desktop, phones, & tablets.
 
 https://github.com/user-attachments/assets/d81f4ec9-cfd5-476b-9c85-39c952e08200
 
@@ -13,13 +12,14 @@ https://github.com/user-attachments/assets/d81f4ec9-cfd5-476b-9c85-39c952e08200
 
 ## Features
 
+- Favourites view
 - Categories view: Albums, artists, genres, & moods
-- Favourites and Uncategorized Songs, making it easy to find songs that need to be added to a playlist.
+- Uncategorized view: Makes it easy to find songs that need to be added to a playlist.
 - Playlists: create, rename, delete, and add a song to several at once
-- A Now Playing view with a reorderable queue, and lock-screen controls for phones and tablets (Supporting Android & Apple)
-- Export any song or playlist as FLAC, and all your playlists as .m3u8 files
-- Optional mood editing that writes `MOOD` tags into your music files (tagd.py file)
-- Search bars, lots of search bars.
+- A Now Playing view with a drag n' drop reorderable queue, and lock-screen controls for phones and tablets (Supporting Android & Apple)
+- Export any song or playlist as FLAC, and export all your playlists as .m3u8 files
+- Optional mood editor that writes `MOOD` tags into your music files (tagd.py file)
+- Search bars for everything!
 
 ## Install
 

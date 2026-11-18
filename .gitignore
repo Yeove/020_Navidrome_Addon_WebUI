@@ -1,0 +1,11 @@
+# My Scratchpad of crap
+^scratchpad/
+
+# Your own settings
+.env
+
+# Created by compose.full.yaml
+navidrome-data/
+
+# Python
+__pycache__/

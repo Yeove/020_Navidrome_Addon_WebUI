@@ -1,0 +1,84 @@
+# Navidrome Custom Frontend: Navidrome, the player and the mood helper.
+# See README.md for the steps.
+
+# Change this to your music folder, e.g. /mnt/storage/music or C:/Users/you/Music
+x-music-folder: &music /path/to/your/music
+
+# The music.yeove.com folder that came with this file. Leave this as it is,
+# unless your Docker app (Portainer, Dockge…) needs the folder's full path.
+x-player-folder: &player ./music.yeove.com
+
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
+    ports:
+      - "4533:4533"
+    environment:
+      ND_MUSICFOLDER: /media/Audio-Music
+      # Lets playlist export and mood editing see where each file lives.
+      ND_SUBSONIC_DEFAULTREPORTREALPATH: "true"
+    volumes:
+      - navidrome-data:/data
+      - type: bind
+        source: *music
+        target: /media/Audio-Music
+        read_only: true
+
+  # The player, at port 4534. It also passes the page's requests on to
+  # Navidrome and the mood helper.
+  music-ui:
+    image: caddy:2-alpine
+    container_name: music-ui
+    restart: unless-stopped
+    ports:
+      - "4534:80"
+    volumes:
+      - type: bind
+        source: *player
+        target: /srv
+        read_only: true
+    command:
+      - sh
+      - -c
+      - |
+        cat > /etc/caddy/Caddyfile <<'END'
+        :80 {
+          handle /rest/* {
+            reverse_proxy navidrome:4533
+          }
+          handle /tags/* {
+            reverse_proxy music-tags:8000
+          }
+          handle {
+            root * /srv
+            rewrite * /index.html
+            file_server
+          }
+        }
+        END
+        exec caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+
+  # The mood helper (tagd.py), the only part that can change your music files.
+  # Turn mood editing on or off with moodEditing at the top of index.html.
+  music-tags:
+    image: python:3.12-alpine
+    container_name: music-tags
+    restart: unless-stopped
+    command: sh -c "pip install -q --root-user-action=ignore mutagen==1.48.1 && exec python -u /app/tagd.py"
+    environment:
+      NAVIDROME_URL: http://navidrome:4533
+      MUSIC_ROOT: /media/Audio-Music
+    volumes:
+      - type: bind
+        source: *player
+        target: /app
+        read_only: true
+      - type: bind
+        source: *music
+        target: /media/Audio-Music
+
+volumes:
+  # Navidrome's database and settings.
+  navidrome-data:

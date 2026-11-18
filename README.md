@@ -1,5 +1,7 @@
 # music.yeove.com | Navidrome Custom Frontend
 
+[![Watch the video](https://img.youtube.com/vi/j1TWcYaRQyI/hqdefault.jpg)](https://www.youtube.com/watch?v=j1TWcYaRQyI)
+
 A light music player for your [Navidrome](https://www.navidrome.org) server, in a single HTML file.
 <br>It works on desktop, iPad and phone, and runs next to Navidrome without changing it.
 

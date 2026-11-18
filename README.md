@@ -1,6 +1,6 @@
 # Navidrome Custom Frontend
 
-A light music player for your [Navidrome](https://www.navidrome.org) server, for desktop, phones, & tablets.
+A lightweight music player for your [Navidrome](https://www.navidrome.org) server, for desktop, phones, & tablets.
 
 https://github.com/user-attachments/assets/d81f4ec9-cfd5-476b-9c85-39c952e08200
 

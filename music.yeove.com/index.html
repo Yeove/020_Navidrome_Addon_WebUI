@@ -3232,7 +3232,10 @@ function showLogin(msg = '') {
   $('#app').hidden = true;
   $('#login').hidden = false;
   document.body.classList.remove('has-track', 'is-playing', 'buffering');
-  const saved = store.get('server', '');
+  // A link can fill in the server and username, e.g. the README's demo link:
+  // …/index.html?server=https://demo.navidrome.org&user=demo
+  const link = new URLSearchParams(location.search);
+  const saved = link.get('server') || store.get('server', '');
   $('#lServer').value = saved;
   // When this page is served next to Navidrome (the Docker setup), its own
   // address is the server, so fill that in. Opened any other way, it's left
@@ -3243,7 +3246,7 @@ function showLogin(msg = '') {
       .then(j => { if (j['subsonic-response'] && !$('#lServer').value) $('#lServer').value = location.origin; })
       .catch(() => {});
   }
-  $('#lUser').value = store.get('user', '');
+  $('#lUser').value = link.get('user') || store.get('user', '');
   $('#lPass').value = '';
   $('#lErr').textContent = msg;
   ($('#lUser').value ? $('#lPass') : $('#lUser')).focus();

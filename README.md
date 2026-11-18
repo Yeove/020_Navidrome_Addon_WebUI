@@ -52,7 +52,7 @@ Open `music.yeove.com/index.html` in a text editor. The settings are at the top:
 | --- | --- |
 | `moodEditing` | `true` allows mood editing. **Edit Moods…** only shows up when `tagd.py` is running (Option 2). `false` turns it off |
 | `musicFolder` | Navidrome's music folder (its `ND_MUSICFOLDER`), used for the paths in exported playlists. This setting is already correct if you set this up using Option 2. With your own Navidrome, it's `/music` unless you changed it |
-| `navidromeLink` | Address of Navidrome's own interface, for the Open Navidrome button in Settings. When empty, it hides the button |
+| `navidromeLink` | Address of Navidrome's own interface, for the Open Navidrome button in Settings. When this field is empty, it will automatically hide this button from the user interface. |
 | `title` | Browser tab title. When empty, it uses the page's address |
 
 Save, then refresh the page.

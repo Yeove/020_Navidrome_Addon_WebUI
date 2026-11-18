@@ -6,7 +6,7 @@ https://github.com/user-attachments/assets/d81f4ec9-cfd5-476b-9c85-39c952e08200
 
 | File | What it is |
 | --- | --- |
-| `music.yeove.com/index.html` | The whole player. Its settings are at the top of the file. |
+| `music.yeove.com/index.html` | The whole player. |
 | `music.yeove.com/tagd.py` | Optional: a small helper that writes moods into your music files |
 | `compose.yaml` | A ready-made Docker setup: Navidrome, the player and the mood helper |
 

@@ -2,7 +2,7 @@
 
 A lightweight WebUI music player for your [Navidrome](https://www.navidrome.org) server, for desktop, phones, & tablets.
 
-**Try the live demo in your browser:** [Demo Here](https://yeove.github.io/yeove_NavidromeCustomFrontend/music.yeove.com/?server=https://demo.navidrome.org&user=demo).
+**Try the live demo in your browser:** [Demo Here](https://github.com/Yeove/020_Navidrome_Addon_WebUI/music.yeove.com/?server=https://demo.navidrome.org&user=demo).
 <br>The password is `demo`.
 <br>You can sign in to your own Navidrome there too, as long as it has an `https://` address.
 
